@@ -55,6 +55,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
+		<PackageReference Include="Syncfusion.Maui.Charts" Version="20.4.51" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -64,6 +65,9 @@
 
 	<ItemGroup>
 	  <MauiXaml Update="MVVM\Views\DashboardPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="MVVM\Views\StatisticsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="MVVM\Views\TransactionsPage.xaml">
