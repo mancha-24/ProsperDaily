@@ -24,7 +24,7 @@
                 </Frame>
                 <Label StyleClass="MarginT15" Text="Transaction Date" />
                 <Frame StyleClass="FrameBorder">
-                    <DatePicker Date="{Binding Transaction.Date}" />
+                    <DatePicker Date="{Binding Transaction.OperationDate}" />
                 </Frame>
                 <HorizontalStackLayout>
                     <CheckBox IsChecked="{Binding Transaction.IsIncome}" />

@@ -71,7 +71,7 @@
                     <DataTemplate>
                         <Grid ColumnDefinitions="*,*" RowDefinitions="*,*">
                             <Label StyleClass="StrongMediumTitle" Text="{Binding Name}" />
-                            <Label Grid.Row="1" StyleClass="SmallFont" Text="{Binding OperationDate, StringFormat='{0:MM/dd/yyyy}'}" />
+                            <Label Grid.Row="1" StyleClass="SmallFont" Text="{Binding HumanDate}" />
 
                             <Label x:Name="lblIsIncome"
                                    IsVisible="False"
