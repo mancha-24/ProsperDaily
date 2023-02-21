@@ -21,5 +21,5 @@ public partial class TransactionsPage : ContentPage
     private async void Cancel_Clicked(object sender, EventArgs e)
     {
         await Navigation.PopToRootAsync();
-    }
+    } 
 }

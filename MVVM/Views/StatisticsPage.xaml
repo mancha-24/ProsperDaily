@@ -25,8 +25,9 @@
                     <chart:NumericalAxis />
                 </chart:SfCartesianChart.YAxes>
 
-                <chart:SplineSeries />
-                <chart:SplineSeries />
+                <chart:SplineSeries ItemsSource="{Binding Summary}"
+                                    XBindingPath="ShownDate"
+                                    YBindingPath="TransactionsTotal"/>
             </chart:SfCartesianChart>
         </Grid>
 
@@ -35,7 +36,8 @@
             RowDefinitions=".1*, .9*" StyleClass="Margin15">
             <Label Text="Top Spending" />
             <CollectionView Grid.Row="1"
-                            EmptyView="No Data">
+                            EmptyView="No Data" 
+                            ItemsSource="{Binding SpendingList}">
                 <CollectionView.ItemsLayout>
                     <LinearItemsLayout ItemSpacing="15"
                                        Orientation="Vertical"/>
@@ -48,25 +50,12 @@
                         </Grid>
                     </DataTemplate>
                 </CollectionView.EmptyViewTemplate>
-                <CollectionView.ItemsSource>
-                    <x:Array Type="{x:Type x:String}">
-                        <x:String>mono</x:String>
-                        <x:String>monodroid</x:String>
-                        <x:String>monotouch</x:String>
-                        <x:String>monorail</x:String>
-                        <x:String>monodevelop</x:String>
-                        <x:String>monotone</x:String>
-                        <x:String>monopoly</x:String>
-                        <x:String>monomodal</x:String>
-                        <x:String>mononucleosis</x:String>
-                    </x:Array>
-                </CollectionView.ItemsSource>
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Grid ColumnDefinitions="*,*" RowDefinitions="*,*">
-                            <Label StyleClass="StrongMediumTitle" Text="Transaction" />
-                            <Label Grid.Row="1" StyleClass="SmallFont" Text="Today" />
-                            <Label Grid.RowSpan="2" Grid.Column="1" StyleClass="ListAmount" Text="+ $550.00" />
+                            <Label StyleClass="StrongMediumTitle" Text="{Binding Name}" />
+                            <Label Grid.Row="1" StyleClass="SmallFont" Text="{Binding OperationDate, StringFormat='{0:MM/dd/yyyy}'}" />
+                            <Label Grid.RowSpan="2" Grid.Column="1" StyleClass="ListAmount" Text="{Binding Amount, StringFormat='{0:C}'}" />
                         </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
